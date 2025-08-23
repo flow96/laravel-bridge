@@ -1,0 +1,71 @@
+{
+  "version": "0.0.1",
+  "name": "flow96/laravel-bridge",
+  "description": "A Laravel package that bridges Laravel APIs with TypeScript clients using OpenAPI generation",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "openapi",
+    "typescript",
+    "api",
+    "client",
+    "bridge",
+    "scramble"
+  ],
+  "authors": [
+    {
+      "name": "Florian Lutze",
+      "email": "info@lutze-software.de"
+    }
+  ],
+  "require": {
+    "php": "^8.1",
+    "illuminate/console": "^9.0|^10.0|^11.0|^12.0",
+    "illuminate/support": "^9.0|^10.0|^11.0|^12.0",
+    "illuminate/http": "^9.0|^10.0|^11.0|^12.0",
+    "guzzlehttp/guzzle": "^7.0",
+    "symfony/process": "^6.0|^7.0",
+    "dedoc/scramble": "^0.12"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^7.0|^8.0|^9.0",
+    "phpunit/phpunit": "^9.0|^10.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "LaravelBridge\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "LaravelBridge\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "LaravelBridge\\LaravelBridgeServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+    "test-feature": "vendor/bin/phpunit --testsuite=Feature",
+    "test-unit": "vendor/bin/phpunit --testsuite=Unit",
+    "analyse": "vendor/bin/phpstan analyse",
+    "format": "vendor/bin/php-cs-fixer fix"
+  },
+  "scripts-descriptions": {
+    "test": "Run all tests",
+    "test-coverage": "Run tests with coverage report",
+    "test-feature": "Run only feature tests",
+    "test-unit": "Run only unit tests"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
