@@ -1,11 +1,11 @@
 # Laravel Bridge
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-bridge/laravel-bridge.svg?style=flat-square)](https://packagist.org/packages/laravel-bridge/laravel-bridge)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel-bridge/laravel-bridge.svg?style=flat-square)](https://packagist.org/packages/laravel-bridge/laravel-bridge)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/flow96/laravel-bridge.svg?style=flat-square)](https://packagist.org/packages/flow96/laravel-bridge)
+[![Total Downloads](https://img.shields.io/packagist/dt/flow96/laravel-bridge.svg?style=flat-square)](https://packagist.org/packages/flow96/laravel-bridge)
 
 Laravel Bridge is a powerful package that seamlessly connects your Laravel API with TypeScript clients by automatically generating type-safe client code from your OpenAPI schemas. Built on top of Laravel Scramble, it provides an effortless way to maintain synchronization between your backend API and frontend client code.
 
-Laravel Bridge uses unde the hood:
+Laravel Bridge uses under the hood:
 * [Laravel Scramble](https://scramble.dedoc.co/) for OpenAPI schema generation
 * [@hey-api/openapi-ts](https://github.com/hey-api/openapi-ts) for OpenAPI schema generation
 
@@ -31,7 +31,14 @@ Before using Laravel Bridge, ensure you have:
 2. **Composer** installed
 3. **Laravel Api Routes** installed (`php artisan install:api`)
 
-### Install via Composer
+
+### Install Laravel API
+
+```bash
+php artisan install:api
+```
+
+### Install the Bridge package
 
 You can install the package via Composer:
 
