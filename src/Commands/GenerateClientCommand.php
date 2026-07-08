@@ -21,7 +21,7 @@ class GenerateClientCommand extends Command
         // Validate that openapi-ts is installed
         if (! file_exists(base_path('node_modules/@hey-api/openapi-ts'))) {
             $this->warn('@hey-api/openapi-ts not found, installing...');
-            $result = Artisan::call('bridge:install');
+            $result = Artisan::call('install:bridge');
             if ($result !== 0) {
                 $this->error('Failed to install @hey-api/openapi-ts');
                 return self::FAILURE;
