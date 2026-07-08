@@ -12,7 +12,7 @@ class Install extends Command
 	public function handle()
 	{
 		$this->info('Installing npm dependencies for API Client...');
-		$process = new Process(['npm', 'install', '@hey-api/openapi-ts'], base_path());
+		$process = new Process(['npm', 'install', '--save-dev', '@hey-api/openapi-ts', 'typescript@^6.0.3'], base_path());
 		$process->setTimeout(null);
 		$process->run(function ($type, $buffer) {
 			$this->output->write($buffer);
