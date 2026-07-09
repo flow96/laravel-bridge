@@ -1,5 +1,4 @@
 {
-  "version": "1.0.0",
   "name": "flow96/laravel-bridge",
   "description": "A Laravel package that bridges Laravel APIs with TypeScript clients using OpenAPI generation",
   "type": "library",
