@@ -50,7 +50,7 @@ composer require flow96/laravel-bridge
 ### Publishing the configuration
 
 Laravel Bridge uses [Scramble](https://scramble.dedoc.co/) under the hood to generate the OpenAPI schema.
-By publishing the configuration you can modify the scramble configuration in the `config/scramble.php` file.
+By publishing the configuration you can modify the Laravel Bridge configuration in `config/bridge.php`, and the Scramble configuration in `config/scramble.php`.
 
 1. Publish the configuration:
 ```bash
@@ -77,6 +77,24 @@ Generate a TypeScript client from your OpenAPI schema:
 
 ```bash
 php artisan bridge:generate
+```
+
+Generate the client into a different directory for a single run:
+
+```bash
+php artisan bridge:generate --output=../frontend/src/api/client
+```
+
+To make the output directory persistent, set it in your `.env` file:
+
+```dotenv
+BRIDGE_CLIENT_OUTPUT=../frontend/src/api/client
+```
+
+You can also set an absolute or computed path in `config/bridge.php`:
+
+```php
+'output' => base_path('../frontend/src/api/client'),
 ```
 
 ### Using the Generated Client

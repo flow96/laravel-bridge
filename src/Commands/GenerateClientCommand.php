@@ -28,8 +28,8 @@ class GenerateClientCommand extends Command
             }
         }
 
-        $input = $this->option('input') ?? "http://localhost:8000/docs/api.json";
-        $output = $this->option('output') ?? resource_path('js/client');
+        $input = $this->option('input') ?? config('bridge.client.input');
+        $output = $this->option('output') ?? config('bridge.client.output');
 
         // ENV Variablen für den Prozess setzen
         $env = array_merge($_ENV, [

@@ -24,12 +24,18 @@ class LaravelBridgeServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // Publish configuration
-        $this->publishes([
-            //__DIR__.'/../config/bridge.php' => config_path('bridge.php'),
-            __DIR__ . '/../vendor/dedoc/scramble/config/scramble.php' => config_path('scramble.php'),
+        $publishables = [
+            __DIR__.'/../config/bridge.php' => config_path('bridge.php'),
             __DIR__.'/../config/openapi-ts.config.ts' => resource_path('js/bridge-openapi-ts.config.ts'),
-        ], 'bridge-config');
+        ];
+
+        $scrambleConfig = base_path('vendor/dedoc/scramble/config/scramble.php');
+
+        if (file_exists($scrambleConfig)) {
+            $publishables[$scrambleConfig] = config_path('scramble.php');
+        }
+
+        $this->publishes($publishables, 'bridge-config');
 
         // Register commands
         if ($this->app->runningInConsole()) {
